@@ -11,6 +11,7 @@ import ContatoformsController from './app/controllers/ContatoformsController';
 import OndeestamosController from './app/controllers/OndeestamosController';
 import BuscaController from './app/controllers/BuscaController';
 import CompraevendaController from './app/controllers/CompraevendaController';
+import ImagenscvController from './app/controllers/ImagenscvController';
 
 import authMiddleware from './app/middlewares/auth';
 
@@ -29,6 +30,7 @@ routes.get('/produtos/:id', ProdutoController.detail);
 routes.get('/compraevenda/', CompraevendaController.index);
 routes.get('/compraevenda/:id', CompraevendaController.detail);
 routes.get('/detalhescv/:id', CompraevendaController.detalhescv);
+routes.get('/detalhesimagenscv/:id', CompraevendaController.detalhesimagenscv);
 
 routes.get('/busca', BuscaController.index);
 
@@ -59,6 +61,7 @@ routes.post('/compraevenda', CompraevendaController.store);
 routes.put('/compraevenda/:id', CompraevendaController.update);
 routes.delete('/compraevenda/:id', CompraevendaController.delete);
 routes.post('/detalhescv/:id', CompraevendaController.storeDetalhescv);
+routes.post('/detalhesimagenscv', ImagenscvController.store);
 
 routes.post('/ondeestamos', OndeestamosController.store);
 routes.put('/ondeestamos/:id', OndeestamosController.update);

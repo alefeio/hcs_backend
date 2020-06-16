@@ -8,6 +8,7 @@ import Contatoforms from '../app/models/Contatoforms';
 import Ondeestamos from '../app/models/Ondeestamos';
 import Compraevenda from '../app/models/Compraevenda';
 import Detalhescv from '../app/models/Detalhecv';
+import Imagenscv from '../app/models/Imagenscv';
 
 import databaseConfig from '../config/database';
 
@@ -20,6 +21,7 @@ const models = [
   Ondeestamos,
   Compraevenda,
   Detalhescv,
+  Imagenscv,
 ];
 
 class Database {

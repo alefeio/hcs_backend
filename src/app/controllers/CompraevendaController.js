@@ -2,6 +2,7 @@ import * as Yup from 'yup';
 import Compraevenda from '../models/Compraevenda';
 import File from '../models/File';
 import Detalhecv from '../models/Detalhecv';
+import Imagenscv from '../models/Imagenscv';
 
 class CompraevendaController {
   async store(req, res) {
@@ -83,6 +84,24 @@ class CompraevendaController {
     const produtos = await Detalhecv.findAll({
       where: { cv_id: busca, ativo: true },
       order: ['id'],
+    });
+
+    return res.json(produtos);
+  }
+
+  async detalhesimagenscv(req, res) {
+    const busca = req.params.id;
+
+    const produtos = await Imagenscv.findAll({
+      where: { cv_id: busca, ativo: true },
+      order: ['id'],
+      include: [
+        {
+          model: File,
+          as: 'imagem',
+          attributes: ['id', 'path', 'url'],
+        },
+      ],
     });
 
     return res.json(produtos);
